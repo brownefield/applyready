@@ -50,8 +50,8 @@ ${r.skills?.length?`<div class="sec"><div class="sec-ttl">Skills &amp; Competenc
 
 const RESOURCES = [
   { ico:"🏛️", ttl:"USAJobs.gov", txt:"The official federal job board. Search GS positions, set alerts, and upload your optimized resume directly." },
-  { ico:"📋", ttl:"Federal Resume Format", txt:"Federal resumes run 3–5 pages. Every bullet needs context: what you did, for whom, with what result, at what scale." },
-  { ico:"🎯", ttl:"KSA Language", txt:"Most GS postings score on Knowledge, Skills & Abilities. Mirror the posting's exact language in your bullets and summary." },
+  { ico:"📋", ttl:"Federal Resume Format", txt:"USAJOBS/OPM guidance now limits resumes to two pages or less. Focus on relevance, keywords, and accomplishments — not length." },
+  { ico:"🎯", ttl:"Keyword Alignment", txt:"Mirror the posting's exact language in your bullets and summary. ApplyReady reads the job announcement and surfaces the terms that matter." },
   { ico:"⭐", ttl:"Veterans Preference", txt:"If you served, you may qualify for 5-point or 10-point preference on every federal application." },
   { ico:"🏝️", ttl:"Hawaii State Jobs", txt:"ApplyReady works for state civil service too. Visit Hawaii's jobs portal for DOH, DOE, and county openings." },
   { ico:"📊", ttl:"GS Pay Scale 2025", txt:"Most professional roles fall between GS-7 and GS-13. Know your grade before you apply." },
@@ -323,13 +323,13 @@ Respond ONLY with valid JSON, no markdown fences:
       <section className="hero">
         <div className="hero-lines" /><div className="hero-orb1" /><div className="hero-orb2" />
         <div className="hero-eye">Federal · State · Civil Service</div>
-        <h1 className="hero-h1">Your Resume,<br /><em>Ready to Apply</em></h1>
-        <p className="hero-sub">Upload your resume, paste a USAJobs posting, and get an AI-optimized federal resume — formatted and ready to upload in minutes.</p>
+        <h1 className="hero-h1">Turn Job Seekers Into<br /><em>Application-Ready Candidates.</em></h1>
+        <p className="hero-sub">ApplyReady helps individuals and community organizations create concise, targeted resumes and job application packets using AI-assisted workflows. Federal resumes must now be two pages or less — we optimize for relevance, keywords, and accomplishments.</p>
         <button className="hero-cta" onClick={() => document.getElementById("app")?.scrollIntoView({ behavior: "smooth" })}>
           ✦ Start Optimizing Free
         </button>
         <div className="hero-stats">
-          {[["3–5×","Longer Fed Resumes"],["USAJobs","Compatible Output"],["KSA","Aligned Language"],["PDF","Ready to Upload"]].map(([n,l],i) => (
+          {[["2 Pages","OPM Resume Limit"],["USAJobs","Compatible Output"],["Keywords","Targeted Language"],["PDF","Ready to Upload"]].map(([n,l],i) => (
             <div key={i}><div className="stat-n">{n}</div><div className="stat-l">{l}</div></div>
           ))}
         </div>
@@ -479,8 +479,120 @@ Respond ONLY with valid JSON, no markdown fences:
         </div>
       </div>
 
+      {/* PRICING */}
+      <div style={{background:"#fff"}}>
+        <div className="section" id="pricing">
+          <div className="sec-eye">Pricing</div>
+          <h2 className="sec-h2">Simple, Transparent Offer Layers</h2>
+          <p className="sec-sub">Start free. Upgrade when you're ready. Build a program for your community.</p>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))",gap:"20px",marginTop:"8px"}}>
+            {/* Free */}
+            <div className="res-card" style={{display:"flex",flexDirection:"column"}}>
+              <div style={{fontSize:"13px",fontWeight:700,letterSpacing:"1px",textTransform:"uppercase",color:"var(--muted)",marginBottom:"8px"}}>Free</div>
+              <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"40px",fontWeight:700,color:"var(--ink)",lineHeight:1,marginBottom:"4px"}}>$0</div>
+              <p style={{fontSize:"13px",color:"var(--muted)",marginBottom:"16px",lineHeight:1.5}}>Start here. No account required.</p>
+              <ul style={{listStyle:"none",padding:0,margin:"0 0 20px",flex:1}}>
+                {["Basic resume readiness check","Paste a job posting or USAJOBS link","AI-assisted improvement suggestions","Basic downloadable draft"].map((f,i)=>(
+                  <li key={i} style={{fontSize:"13px",color:"var(--slate)",padding:"5px 0",borderBottom:"1px solid var(--border)",display:"flex",gap:"8px",alignItems:"flex-start"}}>
+                    <span style={{color:"var(--green)",fontWeight:700,flexShrink:0}}>✓</span>{f}
+                  </li>
+                ))}
+              </ul>
+              <button className="go-btn" style={{marginTop:"auto"}} onClick={() => document.getElementById("app")?.scrollIntoView({ behavior:"smooth" })}>Try Free Resume Check</button>
+            </div>
+            {/* Pro */}
+            <div className="res-card" style={{display:"flex",flexDirection:"column",border:"2px solid var(--navy)",boxShadow:"0 8px 32px rgba(10,22,40,0.12)"}}>
+              <div style={{fontSize:"10px",fontWeight:700,letterSpacing:"2px",textTransform:"uppercase",color:"var(--gold)",marginBottom:"8px"}}>⭐ Most Popular</div>
+              <div style={{fontSize:"13px",fontWeight:700,letterSpacing:"1px",textTransform:"uppercase",color:"var(--muted)",marginBottom:"8px"}}>ApplyReady Pro</div>
+              <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"40px",fontWeight:700,color:"var(--ink)",lineHeight:1,marginBottom:"4px"}}>$79–$149</div>
+              <p style={{fontSize:"12px",color:"var(--muted)",marginBottom:"16px",lineHeight:1.5}}>one-time · for serious applicants</p>
+              <ul style={{listStyle:"none",padding:0,margin:"0 0 20px",flex:1}}>
+                {["AI-optimized resume draft","Job-posting match report","Two-page federal resume formatting","Optional human review add-on"].map((f,i)=>(
+                  <li key={i} style={{fontSize:"13px",color:"var(--slate)",padding:"5px 0",borderBottom:"1px solid var(--border)",display:"flex",gap:"8px",alignItems:"flex-start"}}>
+                    <span style={{color:"var(--gold)",fontWeight:700,flexShrink:0}}>✓</span>{f}
+                  </li>
+                ))}
+              </ul>
+              <button className="go-btn" style={{marginTop:"auto",background:"var(--navy)"}}>Upgrade to ApplyReady Pro</button>
+            </div>
+            {/* Partner */}
+            <div className="res-card" style={{display:"flex",flexDirection:"column"}}>
+              <div style={{fontSize:"13px",fontWeight:700,letterSpacing:"1px",textTransform:"uppercase",color:"var(--muted)",marginBottom:"8px"}}>ApplyReady Partner</div>
+              <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"32px",fontWeight:700,color:"var(--ink)",lineHeight:1,marginBottom:"4px"}}>$299</div>
+              <p style={{fontSize:"12px",color:"var(--muted)",marginBottom:"16px",lineHeight:1.5}}>setup + $99/mo · for organizations</p>
+              <ul style={{listStyle:"none",padding:0,margin:"0 0 20px",flex:1}}>
+                {["Branded intake link for your org","Resume optimization workflow","Applicant tracker","Monthly reporting","Churches, nonprofits, veteran groups, schools"].map((f,i)=>(
+                  <li key={i} style={{fontSize:"13px",color:"var(--slate)",padding:"5px 0",borderBottom:"1px solid var(--border)",display:"flex",gap:"8px",alignItems:"flex-start"}}>
+                    <span style={{color:"var(--green)",fontWeight:700,flexShrink:0}}>✓</span>{f}
+                  </li>
+                ))}
+              </ul>
+              <button className="go-btn" style={{marginTop:"auto",background:"var(--ink)"}} onClick={() => document.getElementById("partner")?.scrollIntoView({ behavior:"smooth" })}>Partner With ApplyReady</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* B2B — FOR ORGANIZATIONS */}
+      <div id="partner" style={{background:"var(--ink)",padding:"80px 40px"}}>
+        <div style={{maxWidth:"960px",margin:"0 auto",display:"grid",gridTemplateColumns:"1fr 1fr",gap:"48px",alignItems:"center"}}>
+          <div>
+            <div className="sec-eye" style={{color:"var(--gold)"}}>For Workforce Programs &amp; Community Organizations</div>
+            <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(28px,4vw,42px)",fontWeight:700,color:"#fff",lineHeight:1.2,margin:"12px 0 20px"}}>Give your members a simple link. We handle the rest.</h2>
+            <p style={{fontSize:"15px",color:"rgba(255,255,255,0.6)",lineHeight:1.75,marginBottom:"28px",fontWeight:300}}>
+              Give your members a simple intake link. They upload a resume, choose a target job, and receive a cleaner, more targeted application packet — your team can review, track, and support every applicant through a single dashboard.
+            </p>
+            <div style={{display:"flex",flexWrap:"wrap",gap:"10px",marginBottom:"32px"}}>
+              {["⛪ Churches","🤝 Nonprofits","🎖️ Veteran Groups","🏫 Schools","📋 Workforce Programs"].map((t,i)=>(
+                <span key={i} style={{background:"rgba(255,255,255,0.08)",border:"1px solid rgba(255,255,255,0.15)",borderRadius:"20px",padding:"6px 14px",fontSize:"12px",color:"rgba(255,255,255,0.75)"}}>{t}</span>
+              ))}
+            </div>
+            <button className="go-btn" style={{width:"auto",padding:"14px 28px",background:"var(--gold)",color:"var(--ink)"}}>Partner With ApplyReady →</button>
+          </div>
+          <div style={{background:"rgba(255,255,255,0.05)",border:"1px solid rgba(255,255,255,0.1)",borderRadius:"16px",padding:"32px"}}>
+            <div style={{fontSize:"13px",fontWeight:600,color:"#fff",marginBottom:"20px"}}>What your organization gets:</div>
+            {[
+              {t:"Branded Intake Link",d:"Your members start from a page that carries your org's name and context."},
+              {t:"Resume Optimization Workflow",d:"Every submission is processed through the same AI-assisted, job-targeted workflow."},
+              {t:"Applicant Tracker",d:"See who submitted, what job they're targeting, and where they are in the process."},
+              {t:"Monthly Reporting",d:"Aggregate data on submission volume, job categories, and readiness outcomes."},
+            ].map((item,i)=>(
+              <div key={i} style={{display:"flex",gap:"14px",marginBottom:"18px"}}>
+                <div style={{width:"6px",height:"6px",borderRadius:"50%",background:"var(--gold)",flexShrink:0,marginTop:"6px"}}/>
+                <div>
+                  <div style={{fontSize:"13px",fontWeight:600,color:"#fff",marginBottom:"3px"}}>{item.t}</div>
+                  <div style={{fontSize:"12px",color:"rgba(255,255,255,0.45)",lineHeight:1.6}}>{item.d}</div>
+                </div>
+              </div>
+            ))}
+            <div style={{marginTop:"20px",paddingTop:"16px",borderTop:"1px solid rgba(255,255,255,0.1)",fontSize:"12px",color:"rgba(255,255,255,0.4)"}}>
+              Starting at <strong style={{color:"rgba(255,255,255,0.75)"}}>$299 setup + $99/mo.</strong> Custom pricing for larger programs.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* DISCLAIMER */}
+      <div style={{background:"var(--parchment)",borderTop:"1px solid var(--border)",padding:"28px 40px"}}>
+        <div style={{maxWidth:"960px",margin:"0 auto",display:"flex",gap:"16px",alignItems:"flex-start"}}>
+          <div style={{width:"32px",height:"32px",borderRadius:"50%",background:"var(--border)",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:"14px"}}>ℹ</div>
+          <div>
+            <div style={{fontSize:"10px",fontWeight:700,letterSpacing:"2px",textTransform:"uppercase",color:"var(--muted)",marginBottom:"6px"}}>Important Disclaimer</div>
+            <p style={{fontSize:"12px",color:"var(--muted)",lineHeight:1.7,maxWidth:"700px"}}>
+              ApplyReady is not affiliated with USAJOBS, OPM, or any government agency. We provide AI-assisted tools to help individuals prepare job application materials. Users are responsible for reviewing all application materials before submission. ApplyReady does not guarantee job interviews, employment offers, or federal selection outcomes. Resume guidance reflects general best practices and publicly available federal hiring guidance, which may change over time.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <footer className="footer">
         <div className="footer-logo">ApplyReady.work</div>
+        <div style={{display:"flex",gap:"24px",justifyContent:"center",margin:"14px 0",flexWrap:"wrap"}}>
+          {[["How It Works","#app"],["Pricing","#pricing"],["For Organizations","#partner"],["Try Free","#app"]].map(([label,href],i)=>(
+            <a key={i} href={href} style={{fontSize:"12px",color:"rgba(255,255,255,0.4)",textDecoration:"none",transition:"color .2s"}}
+              onMouseEnter={e=>e.target.style.color="var(--gold)"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,0.4)"}>{label}</a>
+          ))}
+        </div>
         <div className="footer-sub">A <span>Brownefield Holdings</span> product · Built for federal and state job seekers</div>
       </footer>
     </>
