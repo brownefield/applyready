@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --navy: #0b1f33;
+  --ink: #10151b;
+  --amber: #b8842b;
+  --paper: #faf7f0;
+  --muted: #6b7280;
+  --line: #e4dfd3;
+}
+
+body {
+  background: #faf7f0;
+  color: #10151b;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-\[fadeIn_0\.6s_ease-out\],
+  .animate-\[fadeIn_0\.8s_ease-out\],
+  .animate-\[fadeIn_1s_ease-out\],
+  .animate-\[riseIn_0\.9s_ease-out\] {
+    animation: none !important;
+  }
+}

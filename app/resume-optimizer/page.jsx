@@ -1,4 +1,10 @@
 "use client";
+
+// Archived from the old homepage (pre readiness-diagnostic rebuild).
+// Not linked from primary nav for now — kept live at /resume-optimizer
+// so nothing already indexed 404s, and so this can come back into the
+// main flow later per CLAUDE.md's ApplyReady-as-umbrella plan.
+"use client";
 import { useState, useRef, useCallback } from "react";
 
 function parseJSON(txt) {
