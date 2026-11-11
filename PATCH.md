@@ -1,5 +1,14 @@
 # ApplyReady — Patch Notes
 
+## 2026-11-11 — Restrict `ar_mark_packet_paid` to service_role
+
+Security hardening from the shared-database audit.
+
+- `public.ar_mark_packet_paid` now refuses callers unless `auth.role() = 'service_role'`
+- `EXECUTE` revoked from `PUBLIC`, `anon`, and `authenticated`; granted only to `service_role`
+- No app or edge caller uses this RPC today (Ready Packet CTA still creates unpaid lead rows only; Stripe checkout is not live)
+- Future Stripe webhook must call this with the service role key, never the anon key
+
 ## 2026-11-10 — Opportunity completion plan (Readiness Workspace)
 
 **Product shift:** from readiness diagnostic homepage to **Bring Your Own Opportunity** readiness workspace.
