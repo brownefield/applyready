@@ -58,7 +58,7 @@ export default function HomePage() {
           <p className="text-xs uppercase tracking-wide text-amber mb-2">FIND — free</p>
           <h2 className="font-serif text-3xl text-ink mb-3">Not sure what to pursue yet?</h2>
           <p className="text-muted mb-8 max-w-xl leading-relaxed">
-            Find your destination first, then come back and get ready for it.
+            Find your direction. Get ready for it.
           </p>
           <div className="grid sm:grid-cols-2 gap-4 mb-8">
             <a
