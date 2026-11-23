@@ -58,9 +58,26 @@ export default function HomePage() {
           <p className="text-xs uppercase tracking-wide text-amber mb-2">FIND — free</p>
           <h2 className="font-serif text-3xl text-ink mb-3">Not sure what to pursue yet?</h2>
           <p className="text-muted mb-8 max-w-xl leading-relaxed">
-            Use the free diagnostic to see where you stand. Mission Finder and VentureFit stay
-            modules inside ApplyReady — not separate products.
+            Find your destination first, then come back and get ready for it.
           </p>
+          <div className="grid sm:grid-cols-2 gap-4 mb-8">
+            <a
+              href="https://venturefit.applyready.work"
+              className="block rounded-card border-2 border-navy bg-white px-5 py-5 border-l-[8px] border-l-amber hover:bg-paper transition-colors"
+            >
+              <p className="text-xs uppercase tracking-wide text-amber mb-1">VentureFit</p>
+              <p className="font-serif text-xl text-ink mb-1">Which kind of venture fits you?</p>
+              <p className="text-sm text-muted leading-relaxed">Ten questions. Your Operator Profile at the end.</p>
+            </a>
+            <div
+              aria-disabled="true"
+              className="block rounded-card border-2 border-line bg-white/60 px-5 py-5 border-l-[8px] border-l-line"
+            >
+              <p className="text-xs uppercase tracking-wide text-muted mb-1">Mission Finder</p>
+              <p className="font-serif text-xl text-ink/70 mb-1">Turn what bothers you into a mission.</p>
+              <p className="text-sm text-muted leading-relaxed">Coming soon.</p>
+            </div>
+          </div>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
               href="/diagnostic"
