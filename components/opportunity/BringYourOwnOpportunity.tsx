@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useRef, useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import { OPPORTUNITY_TEMPLATES } from "@/lib/opportunity/templates";
 import { createWorkspace, saveWorkspace } from "@/lib/opportunity/workspace";
 import { DestinationSource } from "@/lib/opportunity/types";
@@ -16,6 +16,18 @@ export default function BringYourOwnOpportunity() {
   const [templateId, setTemplateId] = useState(OPPORTUNITY_TEMPLATES[0].id);
   const [error, setError] = useState("");
   const [pending, startTransition] = useTransition();
+
+  // FIND -> READY handoff: VentureFit / Mission Finder results link here with
+  // ?destination=<result>. Prefill the "describe" box; the person still edits
+  // and submits it themselves.
+  useEffect(() => {
+    const destination = new URLSearchParams(window.location.search).get("destination");
+    if (!destination) return;
+    const clean = destination.trim().slice(0, 300);
+    if (!clean) return;
+    setMode("describe");
+    setText(`I want to become ready to pursue: ${clean}`);
+  }, []);
 
   const start = async (
     source: DestinationSource,

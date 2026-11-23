@@ -1,5 +1,12 @@
 # ApplyReady — Patch Notes
 
+## 2026-11-23 — FIND front door: VentureFit (pending merge)
+
+- Homepage FIND section: VentureFit card → `venturefit.applyready.work` (shared FormBuddy assessment engine); Mission Finder card shown as "Coming soon" until its content is recovered.
+- `/find/venturefit` redirects to the same address.
+- FIND → READY hand-off: `/?destination=<result>` prefills the opportunity intake (describe mode); the person still reviews and submits.
+- Copy change on homepage FIND section : "Find your direction. Get ready for it." (approved by Teddy 2026-11-23)
+
 ## 2026-11-10 — Opportunity completion plan (Readiness Workspace)
 
 **Product shift:** from readiness diagnostic homepage to **Bring Your Own Opportunity** readiness workspace.

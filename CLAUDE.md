@@ -77,7 +77,8 @@ Do not sell “government contracting advice.” Position against SBA/APEX as: t
 3. **Never push directly to `main` without explicit instruction.** Default to feature branches or staged commits awaiting approval.
 4. **Preserve the non-affiliation disclaimer.** If it disappears from any layout, restore it.
 5. **Federal resume claims must match OPM/USAJOBS guidance.** If asked to write marketing copy, flag any stat claim for source verification.
-6. **Do not sprawl.** No separate VentureFit/Mission Finder apps, healthcare vertical, marketplace, or score-library chase until one paid workflow is proven.
+6. **Release gate (permanent).** Nothing reaches production until it passes `docs/RELEASE_GATE.md` (authentication, authorization, tenant isolation) and the results are logged in the canonical changelog.
+7. **Do not sprawl.** No separate VentureFit/Mission Finder apps, healthcare vertical, marketplace, or score-library chase until one paid workflow is proven.
 
 ## Active Items
 - Opportunity completion plan / Bring Your Own Opportunity surface in progress
